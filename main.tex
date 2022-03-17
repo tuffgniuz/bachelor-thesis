@@ -1,22 +1,21 @@
 \documentclass[12pt]{report}
 
-% Layout and Margin
-% left page margin 4 cm
-% right page margin 2.5 cm
-% top and bottom page margin 2.5 cm
-
 % \usepackage{setspace}
+\usepackage[backend=biber, sorting=none]{biblatex}
 \usepackage{graphicx}
 \usepackage{geometry} 
 \usepackage{blindtext}
 \usepackage{subfiles}
     \geometry{
-    a4paper,
-    left=4cm,
-    right=2.5cm,
-    top=2.5cm,
-    bottom=2.5cm
+        a4paper,
+        left=4cm,
+        right=2.5cm,
+        top=2.5cm,
+        bottom=2.5cm
     }
+\addbibresource{../bibliography/papers.bib}
+\addbibresource{../bibliography/misc.bib}
+
 \begin{document}
 
 % ---- PRELIMINARY PAGES
@@ -24,27 +23,45 @@
 % certificate of approval
 % abstract
 % preface
-% toc
+
+\tableofcontents
 % list of tables
 % list of figures
 
+% \subfile{sections/0-abstract}
+
+% CHAPTER 1
 \chapter{Introduction}
-% REMARKS - Why?
 
-\chapter{Theoretical Foundation}
+\subfile{chapters/chapter-1/1.1-background}
+\subfile{chapters/chapter-1/1.2-scope}
+\subfile{chapters/chapter-1/1.3-aims-and-benefits}
+\subfile{chapters/chapter-1/1.4-structures}
 
-\chapter{Problem Analysis}
+% CHAPTER 2
+\chapter{Theoretical Foundation}\label{chap:2}
 
-\chapter{Solution Design}
+\subfile{chapters/chapter-2/2.1-theoretical-foundation}
+\subfile{chapters/chapter-2/2.2-theoretical-frameworks}
 
-\chapter{Testing and Implementation}
+% CHAPTER 3
+% \chapter{Problem Analysis}
 
-\chapter{Evaluation}
+% CHAPTER 4
+% \chapter{Solution Design}
 
-\chapter{Conclusion and Recommendation}
+% CHAPTER 5
+% \chapter{Testing and Implementation}
+
+% CHAPTER 6
+% \chapter{Evaluation}
+
+% CHAPTER 7
+% \chapter{Conclusion and Recommendation}
 
 % ---- REFECENCE PAGES
 % references
+\printbibliography
 % appendices
 % curiculum vitate
 % index

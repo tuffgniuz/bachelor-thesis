@@ -1,3 +1,6 @@
+reviews
+
+*.xml
 *.aux
 *.glo
 *.idx
@@ -23,3 +26,5 @@
 *.mtc1
 *.out
 *.synctex.gz
+
+docs
