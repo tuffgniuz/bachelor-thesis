@@ -1,8 +1,12 @@
-In this chapter the challenges faced in information security is discussed, followed by the common exploits described in OWASP Top 10 and the fundamental concepts of information security. Lastly, this section will cover how security can fit into the SDLC.
+% In this chapter the challenges faced in information security is discussed, followed by the common exploits described in OWASP Top 10 and the fundamental concepts of information security. Lastly, this section will cover how security can fit into the SDLC.
 
-\section{Information Security}
-Information security can be defined as the protection of information from potential abuse subsequent from various threats and vulnerabilities \cite{von_Solms_2013}. Generally speaking, security means protecting our data and systems assets from whoever who intends to misuse it. Security strives to secure ourselves against the most likely forms of attack, to the best ability. 
+This chapter examines the theoretical foundation and frameworks which will be used or support the design of solution for the problem.
 
+\section{Theoretical Foundation}
+In this section, the relevant theories are outlined and presented comprehensively and in accordance with the problem.
+
+\subsection{Information Theory}
+Information security can be defined as the protection of information from potential abuse subsequent from various threats and vulnerabilities \cite{von_Solms_2013}. Generally speaking, security means protecting our data and systems assets from whoever who intends to misuse it. Security strives to secure ourselves against the most likely forms of attack, to the best ability.
 \subsection{Challenges in Information Security}\label{sec:challenges-in-is}
 Computers have evolved drastically from the mechanical calculating machines designed and built to solve the increasingly complex number-crunching challenges during the 19th century \cite{history_of_computers}. Today, computers are powerful machines that allows us to surf the internet, run games, and stream multimedia. Everything involves system and software technology that constantly is processing information. Important and sensitive information are controlled, managed or either form part of the cyberspace. Likewise, important and sensitive information can be exploited as well in this space \cite{Li_2021}. Moreover, it has become very simple to stage an attack due to several factors including:
 \begin{itemize}
@@ -17,159 +21,4 @@ In addition, many organizations perceive security as a hindrance to productivity
 
 Even so, security can be complicated without the appropriate approach. As the level of security is increased, the level of productivity is usually decreased. Therefore, the role of a security plan is to find the balance between protection, usability, and cost. Moreover, in what manner the level of security relates to the value of the item being secured needs to be taken into consideration, when an asset, system, or environment is secured. In Section \ref{sec:opsec} the thesis will go in depth over the important policies and concepts that cover information security.
 
-\subsection{The Fundamentals of Information Security}
-Knowledge on how to stay secure changes at a much slower pace in contrast to the increasingly accelerated rate technology changes. As a consequence, security does not always keep up with the changes. At the same time, gaining a good understanding of the fundamentals of information security will provide the foundation needed to manage witch changes as they come along. In this section, we will discuss some fundamental concepts of information theory as presented by Andress \cite{andress2014the}. This includes:
-\begin{itemize}
-    \item the confidentiality, integrity, and availability (CIA) triad
-    \item identification and authentication
-    \item authorization and access Control
-    \item auditing and accountability
-    \item cryptography
-    \item laws and regulations
-    \item human element security
-    \item physical security
-    \item application security
-\end{itemize}
-
-\subsubsection{The Confidentiality, Integrity, and Availability Triad}
-Security can be complicated as discussed in Section \ref{sec:challenges-in-is}. Nonetheless, the confidentiality, integrity, and availability (CIA) triad, as shown in figure \ref{fig:cia}, provides a model to think about and discuss security concepts. It is commonly discussed in the information security literature \cite{andress2014the} \cite{srinivasan2016cissp} \cite{death2017information}. The CIA triad is commonly referred to as tenets of information security. Information assets that are tied to an application can be associated to a specified CIA requirement represented as a number or values suchlike, high, medium, or low, which can be determined through risk analysis \cite{srinivasan2016cissp}. 
-
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{../../img/chapter_2/cia-triad.png}
-    \caption{The CIA Triad}\label{fig:cia}
-\end{figure}
-
-\paragraph{Confidentiality}
-The first concept describes the ability to protect data from those who are authorized to view it. Confidentiality secures that the information is not exposed to unauthorized parties.
-
-\paragraph{Integrity}
-The second concept describes the ability to prevent data from being changed in an unauthorized or undesirable manner. Integrity preserves the consistency of information both internally and externally.
-
-\paragraph{Availability}
-The final concept describes the ability to access data when required.
-
-\subsubsection{Identification and Authentication}
-Identification is the claim of identity by a person, process, or other entity without implying the authenticity of the claim or privileges that could be associated with the identity. It can be done through shortened versions of our names, images of ourselves, nicknames, account numbers, usernames, ID cards, fingerprint, DNA samples, and many more methods.
-
-Authentication is the procedure used to validate whether the claim of identity is correct. A real world example of authentication would be the usage of a username and password combination inside an application. Depending on the security level required of an asset, more factors can be used for the authentication mechanism, also known as multifactor authentication.
-
-\subsubsection{Authorization and Access Control}
-Besides claiming an identity and confirming the validity of that claim, we need to decide what the party is allowed to do and if access to specific resources are allowed or denied. This can be accomplished through the concepts: authorization and access control.
-
-\paragraph{Principle of least privilege}
-The principle of least privilege is an important authorization concept which mandates that only the bare minimum of access to a party should be allowed to function. As an example, a user account is only granted the access needed to perform their routine work. Violation of the principle is the heart of many security problems faced today. However, it is a very simple security measure that has little to no cost to develop, and it is very effective.
-
-\paragraph{Access control}
-At a high level, access control is about restricting access to a resource. Access control can be divided into two groups to either improve the design of physical security or cybersecurity. Generally, four basic actions can be carried out: allowing, access, denying access, limiting access, and revoking access. Through these actions, most access control issues or situations can be described. Furthermore, It is best practice to deny access by default, with the authorized users only being granted access.
-
-There are two main methods that can be considered to implement access controls: access control lists (ACLs) and capabilities. ACLs, often referred to as "ackles", are a very common choice of access control implementation. Typically, ACLs are implemented in the file systems on which our operating systems run and to control the flow of traffic in the networks to which our systems are connected. A capability-based approach to security are oriented around the use of a token that controls our access. A good analogy would be the usage of a personal badge that grants access to certain doors inside a building. Notably, the right to access a resource is based completely on possession of the token, not who possesses it.
-
-\subsubsection{Auditing and Accountability}
-After going through the process of identification, authentication, and authorization, it is important to keep track of the activities that have occurred. Despite access being granted to the party, it is important that the party behaves according to the rules as it concerns to security, ethics, business conduct, and so on. With an abundance of information in digital form, including medical data, financial information, legal proceedings, trade secrets, and many more items, it has become a vital task to ensure that rules set forth are abided by.
-
-\paragraph{Accountability}
-Accountability depends on identification, authentication, and access control being present in order to trace activities and associate the transactions back to the source. Moreover, maintaining accountability ensures that organizations are in compliance with any laws or regulations associated with the type of data being handled or the industry in which the organization operates. 
-
-From a security perspective, accountability introduces several beneficial features. Without the information that is being monitored or logged, there would be no foundation to maintain a higher security posture.
-
-\paragraph{Auditing}
-A foremost approach to assure accountability through technical means is by ensuring that accurate records are registered of who did what when they did it. Without auditing there exists no ability to assess activities over a period of time. Consequently, there is no way to assist accountability on a large scale. Within the scope of information security, we primarily look at access to or from systems. Some common audited items are passwords and software licensing.
-
-\subsubsection{Cryptography}
-Cryptography is the science of keeping information secure in the sense of confidentiality and integrity. The foremost security measure allowing cryptography is encryption, and often the terms are used interchangeably. Although in reality, encryption is a subset of cryptography. Encryption is the transformation of plaintext into ciphertext. Cryptanalysis defines the science of breaking through the encryption used to create the ciphertext. The study of cryptography and cryptanalysis is described as cryptology.
-
-Cryptology is not a recent invention. At the very least cryptology can be traced back as far as 2500 years and was considered an obscure science. It was well established with both ancient Greeks and Romans who practiced different forms of cryptography. A classic example of ancient cryptography is the Ceasar cipher as seen in Figure \ref{fig:ceasar-cipher}. After the fall of the Roman Empire, cryptology was flourishing in the Arabic world \cite{dooley2018history}.
-
-\begin{figure}[!h]
-    \includegraphics[width=\textwidth]{../../img/chapter_2/ceasar-cipher.jpg}
-    \caption{Ceasar Cipher}\label{fig:ceasar-cipher}
-\end{figure}
-
-Without cryptography, much of the internet-based activities we benefit from today would be at great risk. In fact, cryptography is essential in computing, networking and the great set of transactions that take place over such devices in everyday life. Cryptography has permitted us to become a very network-centric society. 
-Data can be protected at rest, in motion, and to a certain extent, in use, because of cryptography. Thus allowing us to securely communicate and perform transactions when sensitive data is involved.
-
-The process of encrypting plaintext and decrypting ciphertext is described as a cryptographic algorithm. In order to either encrypt or decrypt a message, cryptographic algorithms commonly use a key, or multiple keys, with a range of possible values for the key referred to as the keyspace. The harder the keyspace, the harder it is to decrypt the message. We will take a brief look at some popular cryptographic algorithms.
-
-\paragraph{Symmetric cryptography}
-Symmetric cryptography, also referred to as private key cryptography, utilizes a single key for both encryption of the plaintext and the decryption of the ciphertext as can be seen in Figure \ref{fig:sym-crypt}. A symmetric cipher only works if both the sender and the receiver are in possession of the same key to unlock the cipher. Therefore, everyone who uses a symmetric cipher must have the same set of keys and must use them in the correct order \cite{dooley2018history}.
-
-% Several algorithms exists to implement symmetric key cryptography such as, AES, DE3, 3DES, RC4, Blowfish, etc. \cite{Chandra_2014}.
-
-\paragraph{Asymmetric cryptography}
-When a different key is used for encryption and decryption, we have an asymmetric system in place. Asymmetric cryptography can also be referred to as public key cryptography. Asymmetric cryptography relies on a public key to encrypt data from the sender, and a private key to decrypt data that arrives at the receiving end as seen in Figure \ref{fig:asym-crypt}. Due to the mathematical complexity of the operations to create the private and public keys, no method exist at present to reverse the private key from the public key.
-
-\begin{figure}
-    \centering
-    \begin{minipage}{.5\textwidth}
-        \centering
-        \includegraphics[width=.9\textwidth]{../../img/chapter_2/symmetric-cryptography.jpg}
-        \caption{Symmetric encryption}\label{fig:sym-crypt}
-    \end{minipage}%
-    \begin{minipage}{.5\textwidth}
-        \centering
-        \includegraphics[width=.9\textwidth]{../../img/chapter_2/asymmetric-cryptography.jpg}
-        \caption{Asymmetric encryption}\label{fig:asym-crypt}
-    \end{minipage}
-\end{figure}
-
-\paragraph{Hash functions}
-Unlike both symmetric and asymmetric cryptography, which relies on keys for encryption and decryption, there are algorithms that do not require keys, known as hash functions. Hash functions create a generally unique and fixed-length hash value, referred to as a hash, based on the original message as seen in Figure \ref{fig:hash}. Any form of change to the message will change the hash as well. Furthermore, hash functions do not allow for  contents of the message to be read, though it can be utilized to determine the confidentiality of the message. Some hash algorithms include: Message-Digest 5 (MD5), MD2, MD4, SHA-2, and RACE. 
-
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{../../img/chapter_2/hash-functions.jpg}
-    \caption{Hash function}\label{fig:hash}
-\end{figure}
-
-\subparagraph{Digital signatures}
-A good example of where hash functions are utilized are digital signatures. To detect any changes to the content of the message, digital signatures make it possible to sign a message to ensure the authenticity from the sending party. This is accomplished by generating a hash of the message, and then use the senders private key to encrypt the hash, thereby creating a digital signature. The receiving party can use the sender's public key to decrypt the digital signature, thereby restoring the original hash of the message.
-
-Digital signatures are now recognized as legally binding in many countries, allowing them to be used for certifying contracts or notarizing documents, for authentication of individuals or corporations, as well as components of more complex protocols. Broadly speaking, a digital signature is analogous to a handwritten signature, that provides much stronger security guarantees \cite{katz2010digital}. 
-
-\paragraph{Certificates}
-Another form of cryptography for message signing, is the usage of digital certificates, commonly known as certificates. Certificates link together a public key and an individual, typically by taking the public key and something to identify the individual, suchlike a name and address, and having them signed by a certificate authority (CA). A CA is a trusted entity that is responsible for digital certificates. The advantage of using a certificate is that it provides verification that a public key actually is associated with a particular individual.
-
-% \subsubsection{Laws and Regulations}
-
-\subsubsection{The Human Element}
-
-\subsubsection{Physical Security}
-
-\subsection{::}
-
-\subsubsection{Operation Security}\label{sec:opsec}
-Operation Security (OPSEC) is the analytical process as well a strategy utilized to identify information that potentially can be exploited by an attacker and used to collect vital information that could harm an organization's plans or reputation. Thus, OPSEC provides the means to design countermeasures to reduce or eliminate adversary exploitation.
-
-During the Vietnam War, a team dubbed Purple Dragon observed how their adversaries were able to anticipate their strategies and tactics despite North Vietnam and the Viet Cong's incapability to decrypt the United States communications. They concluded that the U.S. was unknowingly exposing information to the enemy that was being grouped together and exploited. The same theory has been brought over from the military to the information security professionals \cite{tunggal_what_2021}.
-
-\paragraph{The Operation Security Model}
-The OPSEC process is a five-step risk assessment that assists to identify what information needs to be protected, analyzing the threats and vulnerabilities that might impact, and develop mitigations for those threats and vulnerabilities as show in Figure \ref{fig:opsec}.
-
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=.5\textwidth]{../../img/chapter_2/opsec-model.png}
-    \caption{OPSEC model}
-    \label{fig:opsec}
-\end{figure}
-
-\subparagraph{Identification of critical information}
-
-\subparagraph{Analysis of threats}
-
-\subparagraph{Analysis of vulnerabilities}
-
-\subparagraph{Assessment of risks}
-
-\subparagraph{Application of countermeasures}
-
-\section{Secure Development}
-
-\subsection{OWASP Top 10 - An Overview of Common Exploits}
-
-\subsection{Software Assurance}
-
-\subsection{Secure by Design}
-
-
-
+Knowledge on how to stay secure changes at a much slower pace in contrast to the increasingly accelerated rate technology changes. As a consequence, security does not always keep up with the changes. At the same time, gaining a good understanding of the fundamentals of information security will provide the foundation needed to manage changes as they come along.

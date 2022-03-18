@@ -2355,14 +2355,13 @@
     <bcf:citekey order="8">death2017information</bcf:citekey>
     <bcf:citekey order="9">Lopez_2019</bcf:citekey>
     <bcf:citekey order="10">andress2014the</bcf:citekey>
-    <bcf:citekey order="11">andress2014the</bcf:citekey>
-    <bcf:citekey order="12">srinivasan2016cissp</bcf:citekey>
-    <bcf:citekey order="13">death2017information</bcf:citekey>
-    <bcf:citekey order="14">srinivasan2016cissp</bcf:citekey>
+    <bcf:citekey order="11">srinivasan2016cissp</bcf:citekey>
+    <bcf:citekey order="12">death2017information</bcf:citekey>
+    <bcf:citekey order="13">srinivasan2016cissp</bcf:citekey>
+    <bcf:citekey order="14">dooley2018history</bcf:citekey>
     <bcf:citekey order="15">dooley2018history</bcf:citekey>
-    <bcf:citekey order="16">dooley2018history</bcf:citekey>
-    <bcf:citekey order="17">katz2010digital</bcf:citekey>
-    <bcf:citekey order="18">tunggal_what_2021</bcf:citekey>
+    <bcf:citekey order="16">katz2010digital</bcf:citekey>
+    <bcf:citekey order="17">tunggal_what_2021</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
