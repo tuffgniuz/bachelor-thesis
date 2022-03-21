@@ -2350,18 +2350,17 @@
     <bcf:citekey order="3">Bishop_2017</bcf:citekey>
     <bcf:citekey order="4">Tabassum_2018</bcf:citekey>
     <bcf:citekey order="5">von_Solms_2013</bcf:citekey>
-    <bcf:citekey order="6">history_of_computers</bcf:citekey>
+    <bcf:citekey order="6">zinatullin2016the</bcf:citekey>
     <bcf:citekey order="7">Li_2021</bcf:citekey>
-    <bcf:citekey order="8">death2017information</bcf:citekey>
-    <bcf:citekey order="9">Lopez_2019</bcf:citekey>
-    <bcf:citekey order="10">andress2014the</bcf:citekey>
-    <bcf:citekey order="11">srinivasan2016cissp</bcf:citekey>
-    <bcf:citekey order="12">death2017information</bcf:citekey>
-    <bcf:citekey order="13">srinivasan2016cissp</bcf:citekey>
+    <bcf:citekey order="8">Lopez_2019</bcf:citekey>
+    <bcf:citekey order="9">andress2014the</bcf:citekey>
+    <bcf:citekey order="10">srinivasan2016cissp</bcf:citekey>
+    <bcf:citekey order="11">death2017information</bcf:citekey>
+    <bcf:citekey order="12">srinivasan2016cissp</bcf:citekey>
+    <bcf:citekey order="13">dooley2018history</bcf:citekey>
     <bcf:citekey order="14">dooley2018history</bcf:citekey>
-    <bcf:citekey order="15">dooley2018history</bcf:citekey>
-    <bcf:citekey order="16">katz2010digital</bcf:citekey>
-    <bcf:citekey order="17">tunggal_what_2021</bcf:citekey>
+    <bcf:citekey order="15">katz2010digital</bcf:citekey>
+    <bcf:citekey order="16">tunggal_what_2021</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
