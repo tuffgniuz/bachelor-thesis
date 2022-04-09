@@ -1,0 +1,60 @@
+\section{API Design}
+The CheFeed API is organized around REST. This section describes how the API is designed around the resources.
+
+\subsection{Core Resources}
+\begin{itemize}
+    \item Recipes
+    \item Categories
+    \item Ingredients
+    \item Bookmarks
+    \item Reviews (comments)
+\end{itemize}
+
+\subsubsection{Recipes}
+This object represents a Recipe object that belongs to a User object. Reading recipes does not require authentication, thus users without accounts are authorized to view recipes. Table \ref{tab:recipe-api} describes all the resources related to the Recipe object and what HTTP request methods are available.
+
+\lstset{language=json}
+\lstset{caption=The Recipe example object}
+\begin{lstlisting}
+{
+    "id": "",
+    "title": "Rendang",
+    "description": "The world's tastiest beef stew",
+    "cooking_time": 3,
+    "image": "path/to/image",
+    "video": "path/to/video",
+    "created_at": "2022-08-02",
+    "updated_at": ""
+}
+\end{lstlisting}
+
+\subfile{../../tables/api-recipes}
+
+\subsubsection{Categories}
+This object represents a Category object and the resources are described in Table \ref{tab:category-api}.
+
+\subfile{../../tables/api-categories}
+
+\subsubsection{Ingredients}
+This object represents an Ingredient object and the endpoints for this resouce are described in Table \ref{tab:ingredient-api}.
+
+\subfile{../../tables/api-ingredients}
+
+\subsubsection{Bookmarks}
+This objects represents a Bookmark object and the endpoints for this resource are described in Table \ref{tab:bookmark-api}.
+
+\subfile{../../tables/api-bookmarks}
+
+\subsubsection{Reviews}
+This object represents a Review object and the endpoints for this resource are described in Table \ref{tab:review-api}. The Review object can also be referred to as the Comment object as they both describe the same concept within the application.
+
+\subfile{../../tables/api-reviews}
+
+\subsection{Authentication}
+Chefeed handles its authentication mechanism and user management through the FastAPI Users library, a ready-to-use library for FastAPI.
+
+\subsection{Errors}
+
+\subsection{Versioning}
+Changes are inevitable in software development, and it must be managed well. Without proper management, changes can threaten the client integrity. APIs only are required to up-versioned when a breaking change is introduced. For instance changes in the format of the response data for one or more requests, a change in the request or response type, or whenever any part of the API is removed. Chefeeds API follows the versioning method similar to that of Stripe.
+
