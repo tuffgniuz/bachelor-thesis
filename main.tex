@@ -8,6 +8,7 @@
 \usepackage{tabulary}
 \usepackage{listings}
 \usepackage{setspace}
+\usepackage{pdfpages}
 \usepackage{subfiles}
     \geometry{
         a4paper,
@@ -16,20 +17,28 @@
         tmargin=2.5cm,
         bottom=2.5cm
     }
-% \setcounter{tocdepth}{3}
+
 \doublespacing
+
+
 \addbibresource{../bibliography/papers.bib}
 \addbibresource{../bibliography/misc.bib}
 
 \lstset{frame=single, basicstyle=\ttfamily}
 
-% \include{cover}
-
 \begin{document}
 
-\tableofcontents
-% list of tables
-% list of figures
+% \include{cover}
+
+% \subfile{approval}
+
+% \includepdf{statement.pdf}
+
+% \subfile{chapters/0-abstract}
+
+% \tableofcontents
+% \listoffigures
+% \listoftables
 
 \chapter{Introduction}
 \subfile{chapters/chapter-1/1.1-background}
@@ -42,26 +51,28 @@
 \subfile{chapters/chapter-2/2.1-theoretical-foundation}
 \subfile{chapters/chapter-2/2.2-fundamentals-of-infosec}
 \subfile{chapters/chapter-2/2.3-software-development}
-\subfile{chapters/chapter-2/2.4-owasp}
+\subfile{chapters/chapter-2/2.4-security-testing}
 
-\chapter{Problem Analysis}\label{chap:3}
+\chapter{Analysis on Secure Software Development}\label{chap:3}
 \subfile{chapters/chapter-3/index}
 
 % CHAPTER 4
-\chapter{Software Security Design}
-% \subfile{chapters/chapter-4/4-introduction}
-% \subfile{chapters/chapter-4/4.1-software-architecture}
-% \subfile{chapters/chapter-4/4.3-security-requirements}
-
+\chapter{Security Solution Design}
+\subfile{chapters/chapter-4/index}
 
 % CHAPTER 5
-% \chapter{Testing and Implementation}
+\chapter{Testing and Implementation}
+\subfile{chapters/chapter-5/index}
 
 % CHAPTER 6
-% \chapter{Evaluation}
+\chapter{Evaluation}
+\subfile{chapters/chapter-6/index}
+
 
 % CHAPTER 7
-% \chapter{Conclusion and Recommendation}
+\chapter{Conclusion and Recommendation}
+\subfile{chapters/chapter-7/index}
+
 \printbibliography
 
 \end{document}
