@@ -1,7 +1,8 @@
-\documentclass[12pt]{report}
+\documentclass[12pt, a4paper]{report}
 
 % \usepackage{setspace}
 \usepackage[backend=biber, sorting=none]{biblatex}
+\usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{dirtytalk}
 \usepackage{geometry} 
@@ -10,16 +11,24 @@
 \usepackage{setspace}
 \usepackage{pdfpages}
 \usepackage{subfiles}
-    \geometry{
-        a4paper,
-        left=4cm,
-        right=2.5cm,
-        tmargin=2.5cm,
-        bottom=2.5cm
-    }
+
+\graphicspath{ {./img/} }
+
+% centering the chapter
+\titleformat{\chapter}[display]
+    {\normalfont\huge\bfseries\centering}{\centering\chaptertitlename\ \thechapter}{20pt}{\Huge}
+    % \titlespacing*{\chapter} 
+    % {0pt}{50pt}{40pt}
+
+\geometry{
+    a4paper,
+    left=4cm,
+    right=2.5cm,
+    tmargin=2.5cm,
+    bottom=2.5cm
+}
 
 \doublespacing
-
 
 \addbibresource{../bibliography/papers.bib}
 \addbibresource{../bibliography/misc.bib}
@@ -42,37 +51,20 @@
 
 \chapter{Introduction}
 \subfile{chapters/chapter-1}
-% \subfile{chapters/chapter-1/1.1-background}
-% \subfile{chapters/chapter-1/1.2-scope}
-% \subfile{chapters/chapter-1/1.3-aims-and-benefits}
-% \subfile{chapters/chapter-1/1.4-structures}
 
-% \chapter{Theoretical Foundation}
-% \subfile{chapters/chapter-2/2-chapter-introdution}
-% \subfile{chapters/chapter-2/2.1-theoretical-foundation}
-% \subfile{chapters/chapter-2/2.2-fundamentals-of-infosec}
-% \subfile{chapters/chapter-2/2.3-software-development}
-% \subfile{chapters/chapter-2/2.4-security-testing}
+\chapter{Theoretical Foundation}
+\subfile{chapters/chapter-2}
 
-% \chapter{Analysis on Secure Software Development}\label{chap:3}
-% \subfile{chapters/chapter-3/index}
+% \chapter{Implementing a Secure Software Development Lifecycle}
+% \subfile{chapters/chapter-3}
 
-% CHAPTER 4
 % \chapter{Security Solution Design}
-% \subfile{chapters/chapter-4/index}
 
-% CHAPTER 5
 % \chapter{Testing and Implementation}
-% \subfile{chapters/chapter-5/index}
 
-% CHAPTER 6
 % \chapter{Evaluation}
-% \subfile{chapters/chapter-6/index}
 
-
-% CHAPTER 7
 % \chapter{Conclusion and Recommendation}
-% \subfile{chapters/chapter-7/index}
 
 \printbibliography
 
