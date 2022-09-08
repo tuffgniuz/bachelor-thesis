@@ -7,18 +7,29 @@
 \usepackage{dirtytalk}
 \usepackage{geometry} 
 \usepackage{tabulary}
-\usepackage{listings}
 \usepackage{setspace}
 \usepackage{pdfpages}
 \usepackage{subfiles}
+\usepackage{titlesec}
+
 
 \graphicspath{ {./img/} }
 
+% \titleformat{\chapter}{\MakeUppercase{\Large\bfseries\centering}}{\centering\chaptertitlename}
+% \titleformat{chapter}{\bfseries\centering\huge\titlerule}{\chaptertitlename~\thechapter.}{10pt}{\huge}[\titlerule]
+
 % centering the chapter
 \titleformat{\chapter}[display]
-    {\normalfont\huge\bfseries\centering}{\centering\chaptertitlename\ \thechapter}{20pt}{\Huge}
+    {\normalfont\large\bfseries\centering}{\MakeUppercase{\centering\chaptertitlename} \thechapter}{0pt}{\MakeUppercase}
     % \titlespacing*{\chapter} 
     % {0pt}{50pt}{40pt}
+
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+\titleformat*{\paragraph}{\large\bfseries}
+\titleformat*{\subparagraph}{\large\bfseries}
+
+\titlespacing*{\chapter}{0pt}{0pt}{30pt}
 
 \geometry{
     a4paper,
@@ -30,24 +41,22 @@
 
 \doublespacing
 
-\addbibresource{../bibliography/papers.bib}
-\addbibresource{../bibliography/misc.bib}
-
-\lstset{frame=single, basicstyle=\ttfamily}
+\addbibresource{bibliography/papers.bib}
+\addbibresource{bibliography/misc.bib}
 
 \begin{document}
 
-% \include{cover}
+\include{cover}
 
-% \subfile{preliminary_pages/approval}
+\include{preliminary_pages/approval.tex}
 
-% \includepdf{preliminary/statement.pdf}
+\includepdf{preliminary_pages/statement.pdf}
 
-% \subfile{chapters/0-abstract}
+\includepdf{preliminary_pages/abstract.pdf}
 
-% \tableofcontents
-% \listoffigures
-% \listoftables
+\tableofcontents
+\listoffigures
+\listoftables
 
 \chapter{Introduction}
 \subfile{chapters/chapter-1}
@@ -55,17 +64,21 @@
 \chapter{Theoretical Foundation}
 \subfile{chapters/chapter-2}
 
-% \chapter{Implementing a Secure Software Development Lifecycle}
-% \subfile{chapters/chapter-3}
+\chapter{Analysis on Security Knowledge Framework}
+\subfile{chapters/chapter-3}
 
-% \chapter{Security Solution Design}
+\chapter{Solution Design}
+\subfile{chapters/chapter-4}
 
-% \chapter{Testing and Implementation}
+\chapter{Solution Implementation}
+\subfile{chapters/chapter-5}
 
-% \chapter{Evaluation}
+\chapter{Discussion}
+\subfile{chapters/chapter-6}
 
-% \chapter{Conclusion and Recommendation}
+\chapter{Conclusion and Recommendation}
+\subfile{chapters/chapter-7}
 
-\printbibliography
+\printbibliography[title={\MakeUppercase{\large References}}]
 
 \end{document}

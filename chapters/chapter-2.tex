@@ -137,22 +137,175 @@ The purpose of the SDLC has adjusted over time since the first concept was prese
     \includegraphics[width=0.8\textwidth]{chapter-2/sdlc-phases}
 \end{figure}
 
-\subsubsection{The Waterfall Model}
+\section{Software Security Awareness and Security Standards}
+Today's software demands the highest security standard from companies and developers. Although many security standards exist, this thesis will cover the ones most relevant to the study. These include standards such as the National Institute of Standards and Technology (NIST),lists such as the Common Weakness Enumeration (CWE) and projects from OWASP such as the OWASP Top 10, OWASP ASVS, and the OWASP MASVS. 
 
-\subsubsection{The Agile Model}
+\subsection{The Open Web Application Security Project}
+OWASP is a leader in software security. As a non-profit organization focusing on the improvement of software security, it has become a source for security tools, resources, education and training. Furthermore, it has a worldwide community of software security professionals. Security awareness documents such as the OWASP Top 10 and standards such as the ASVS and MASVS are part of OWASP as well is SKF.
 
-\subsubsection{The Spiral Model}
+\subsection{The Top 10}\label{sec:owasp-top-10}
+The OWASP Top 10 is a regularly updated security awareness document concerning web applications, focusing on the ten most critical risks. Each security risk has a list of mapped CWEs. Table \ref{} describes the top ten security risks by OWASP Top 10. Although the document exist to bring awareness, it has not stopped companies to use it as a standard to secure software. The OWASP Top 10 provides some recommendations on how to use it as a standard. Additionally, it provides ways to prevent the common attacks. However, it is still encourages to use a real standard such as the ASVS.
 
-\subsection{Security in the Software Development Life Cycle}
+\begin{table}
+    \centering
+    \caption{The OWASP Top 10 as of 2021}
+    \label{tab:owasp-top-ten}
+    \begin{tabulary}{1.0\textwidth}{|l|L|}
+        \hline
+        \textbf{ID} & \textbf{Description} \\
+        \hline
+        AO1:2021 & Broken Access Control \\
+        \hline
+        AO2:2021 & Cryptographic Failures \\
+        \hline
+        AO3:2021 & Injection \\
+        \hline
+        AO4:2021 & Insecure Design \\
+        \hline
+        AO5:2021 & Security Misconfiguration \\
+        \hline
+        AO6:2021 & Vulnerable and Outdated Components \\
+        \hline
+        AO7:2021 & Identification and Authentication Failures \\
+        \hline
+        AO8:2021 & Software and Data Integrity Failures \\
+        \hline
+        A09:2021 & Security and Logging and Monitoring Failures \\
+        \hline
+        A10:2021 & Server-side Request Forgery (SSRF) \\
+        \hline 
+    \end{tabulary}
+\end{table}
 
-\subsubsection{Common Vulnerabilities}
+\subsubsection{Broken Access Control}
+Implementing a reliable access control mechanism is often underestimated by developers, causing unauthorized access to application content and functions.
 
-\paragraph{The OWASP Top Ten}
+\subsubsection{Cryptographic Failures}
+Data such as passwords, credit cards numbers, health records, personal information, and business secrets require extra protection. Therefore, it is important to determine how much protection data needs in transit and at rest. When encryption is implemented poorly, attackers can retrieve data in its unencrypted state.
 
-\subparagraph{Broken Access Control} 
+\subsubsection{Injection}
+Injection attacks include SQL, NoSQL, OS command, Object Relational Mapping (ORM), LDAP, and Expression Language (EL) or Object Graph Navigation Library (OGNL) injections. Injection vulnerabilites are introduces when:
 
-\subsubsection{Security Engineering}
+\begin{itemize}
+    \item User entered data is not validated, filtered or sanitized
+    \item Dynamic queries or non paratemetized calls without context-aware escaping are used directly in the interpreter.
+    \item Hostile data is used within ORM search parameters to extract additional, sensitive records.
+    \item Hostile data is directly used or concatenated. The SQL or command contains the structure and malicious data in dynamic queries, commands, or stored procedures.
+\end{itemize}
+
+\subsubsection{Insecure Design}
+Business often fail to determine what level of security design is required, due to a lack of business risk profiling to the software being developed. As a result, software is insecure by design. It is therefore important to include security into the SDLC and ensure security activities are performed from the beginning.
+
+\subsubsection{Security Misconfiguration}
+Security misconfigurations are security controls that are configured improperly of left insecure, putting assets at risk. These include configuration such as default accounts and password that are not changed, unnecessary features that are enabled, outdated software and many more. Without proper security in place, systems are at more risk.
+
+\subsubsection{Vulnerable and Outdated Components}
+Software often rely on third party components on both the server-side and client-side. Unfortunately, these components may have software vulnerabilities when they are developed at high speed without doing any security tests before publishing.
+
+\subsubsection{Identification and Authentication Failures}
+Vulnerabilities in authentication schemes can lead to serious and damaging data breaches. Therefore, developers need to ensure that the user's identity, authentication, and session management is properly confirmed.
+
+\subsubsection{Software and Data Integrity Failures}
+Moderns software architecture has become more and more complex. As a result applications often rely on plugins, libraries, or modules from untrusted sources, repositories and content delivery networks. Critical data and software updates are often added to the delivery pipeline without verifying their integrity resulting and software data integrity failures \cite{site:A08_2022}.
+
+\subsubsection{Security Logging and Monitoring Failures}
+The ninth category in the OWASP Top 10 cover security logging and monitoring. Loggin and monitoring provides raw data that assists in identifying possible security threats. This category is difficult to test for since it often involves interviewing or asking if attacks were found during a penetration test. The category exist because without logging and monitoring, breaches simply cannot be detected.
+
+\subsubsection{Server Side Request Forgery}
+Server Side Request Forgery (SSRF) happen when an attacker can abuse the functionality of the server to read or update internal resources.
+
+\subsection{The Application Security Verification Standard}
+The ASVS is a security standard that provides developers a list of security requirements for secure development. The standard can be used to establish a level of confidence in security of web applications. The requirements are categorized in 14 categories that are described in table \ref{tab:asvs-categories}. Each ASVS category has its objective and set of security requirements. Furthermore, the ASVS divides the risk severity into three levels. It is up to the organization or development team to decide what security requirements must be implemented. This can be done in the early phases of the SDLC during planning and the requirements' analysis phase.
+
+\begin{table}[!b]
+    \centering
+    \caption{ASVS Categories}
+    \label{tab:asvs-categories}
+    \begin{tabulary}{1.0\textwidth}{|l|L|}
+        \hline
+        \textbf{ID} & \texbf{Category} \\                                                    
+        \hline
+        \textbf{V1} & Architecture, Design, and Threat Modeling \\
+        \hline
+        \textbf{V2} & Authentication \\
+        \hline
+        \textbf{V3} & Session Management \\
+        \hline
+        \textbf{V4} & Access Controll \\
+        \hline
+        \textbf{V5} & Validation, Sanitization and Encoding \\
+        \hline
+        \textbf{V6} & Stored Cryptography \\
+        \hline
+        \textbf{V7} & Error Handling and Logging \\
+        \hline
+        \textbf{V8} & Data Protection \\
+        \hline
+        \textbf{V9} & Communication \\
+        \hline
+        \textbf{V10} & Malicious Code \\
+        \hline
+        \textbf{V11} & Business Logic \\
+        \hline
+        \textbf{V12} & Files and Resources \\
+        \hline
+        \textbf{V13} & API and Web Service \\
+        \hline
+        \textbf{V14} & Configuration \\
+        \hline
+    \end{tabulary}
+\end{table}
 
 
+\subsubsection{ASVS Level 1}
+Applications achieve Level 1 if it sufficiently defends against security vulnerabilities that are easy to discover, and are included in the OWASP Top 10. Level 1 is the bare minimum that all applications should strive when implementing security. Furthermore, Level 1 security requirements can be tested against automatically by tools.
+
+\subsubsection{ASVS Level 2}
+Applications achieve Level 2 - or standard - if it sufficiently defends against most the of security risks that are associated with today's software. It guarantees that security controls are in place, effective, and used within the application. Level 2 applications include applications that handle significant business-to-business transactions, such as healthcare information, implement critical business or sensitive functions, or other sensitive assets.
+
+\subsubsection{ASVS Level 3}
+The highest verification level is the ASVS Level 3. Level 3 applications are commonly reserved for application that require a substantial levels of security verification, such as applications that are developed for the military, health and safety, critical infrastructure, and so on.
+
+\subsection{The Mobile Application Security Verification Standard}
+The MASVS is a security standard similar to the ASVS, but offers a security standard for mobile applications specifically. Closely related to the MASVS is the MSTG, which offers test cases against the security requirements defined in the MASVS. Like the ASVS, the security requirements defined in the MASVS are devided into different categories that are described in table \ref{tab:masvs-categories}. As seen, the MASVS has lesser categories compared with the ASVS, and also focuses a lot more on how mobile applications handle, store and protect sensitive data. As with the ASVS, which security requirements to implement needs to be decided during the planning and requirements analysis phase of the SDLC by the team responsible for the development of the application.
+
+The MASVS defines two verification levels, MASVS-L1 and MASVS-L2. Additionally, it adds a set of \emph{reverse engineering resiliency requirements}, MASVS-R.
+
+\subsubsection{MASVS Level 1: Standard Security}
+The MASVS-L1 is the standard security level all mobile applications should adhere to. Implementing MASVS-L1 ensures that basic security requirements in terms of code quality, handling of sensitive data, and interaction with the mobile environment is fulfilled. Testing must be done to verify wether the security controls are implemented correctly.
+
+\subsubsection{MASVS Level 2: Defense-in-Depth}
+Going beyond the standard security requirements introduces mobile applications to MASVS-L2. A threat model has be in place to achieve MASVS-L2. Mobile apps such as banking apps have to adhere to MASVS-L2.
+
+\subsubsection{Resiliency Against Reverse Engineering and Tampering}
+The MASVS-R protects mobile applications against client side attacks such as tampering, modding, or reverse engineering to extract sensitive code or data. The MASVS-R may be applied to applications handle highly sensitive data to protect its intellectual property or tamper-proofing an app.
+
+
+\begin{table}
+    \centering
+    \caption{MASVS categories}
+    \label{tab:masvs-categories}
+    \begin{tabulary}{1.0\textwidth}{|L|L|}
+        \hline
+        \textbf{ID} & \textbf{Category} \\
+        \hline
+        \textbf{V1} & Architecture, Design and Threat Modeling \\
+        \hline
+        \textbf{V2} & Data Storage and Privacy Requirements \\
+        \hline
+        \textbf{V3} & Cryptography Requirements \\
+        \hline
+        \textbf{V4} & Authentication and Session Management \\
+        \hline
+        \textbf{V5} & Network Communication Requirements \\
+        \hline
+        \textbf{V6} & Platform Interaction Requirements \\
+        \hline
+        \textbf{V7} & Code Quality and Build Settings Requirements \\
+        \hline
+        \textbf{V8} & Resilience Requirements \\
+        \hline
+    \end{tabulary}
+\end{table}
 
 
