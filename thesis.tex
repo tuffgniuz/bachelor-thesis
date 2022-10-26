@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{report}
+\documentclass[conference]{IEEEtran}
 
 % \usepackage{setspace}
 \usepackage[backend=biber, sorting=none]{biblatex}
@@ -12,73 +12,70 @@
 \usepackage{subfiles}
 \usepackage{titlesec}
 
-
 \graphicspath{ {./img/} }
 
-% \titleformat{\chapter}{\MakeUppercase{\Large\bfseries\centering}}{\centering\chaptertitlename}
-% \titleformat{chapter}{\bfseries\centering\huge\titlerule}{\chaptertitlename~\thechapter.}{10pt}{\huge}[\titlerule]
-
-% centering the chapter
-\titleformat{\chapter}[display]
-    {\normalfont\large\bfseries\centering}{\MakeUppercase{\centering\chaptertitlename} \thechapter}{0pt}{\MakeUppercase}
-    % \titlespacing*{\chapter} 
-    % {0pt}{50pt}{40pt}
-
-\titleformat*{\subsection}{\large\bfseries}
-\titleformat*{\subsubsection}{\large\bfseries}
-\titleformat*{\paragraph}{\large\bfseries}
-\titleformat*{\subparagraph}{\large\bfseries}
-
-\titlespacing*{\chapter}{0pt}{0pt}{30pt}
-
 \geometry{
-    a4paper,
-    left=4cm,
-    right=2.5cm,
-    tmargin=2.5cm,
-    bottom=2.5cm
+    left=1.58cm,
+    right=1.58cm,
+    tmargin=1.9cm,
+    bottom=2.54cm
 }
-
-\doublespacing
 
 \addbibresource{bibliography/papers.bib}
 \addbibresource{bibliography/misc.bib}
 
+\title{Designing Secure Mobile Applications with OWASP Security Knowledge Framework}
+
+
+\author{
+    Imanuel Febie \\
+    Computer Science \\
+    BINUS International University \\
+    Jakarta, Indonesia \\
+    imanuel.febie@binuc.ac.id \\
+    \and
+    Raymond Bahana, S.T., M.Sc \\
+    Computer Science \\
+    Binus International University \\
+    Jakarta, Indonesia \\
+    rbahana@binus.edu \\
+    \and
+    Ardimas Andi Purwita, S.T., M.T., Ph.D. \\
+    Computer Science \\
+    Binus International University \\
+    Jakarta, Indonesia \\
+    ardimas.purwita@binus.edu\\
+    % \IEEEauthorblockN{Imanuel Febie}
+    % \IEEEauthorblockA{Computer Science \\ BINUS International University \\ Jakarta, Indonesia \\ imanuel.febie@binus.ac.id}
+}
+
 \begin{document}
 
-\include{cover}
+\maketitle
 
-\include{preliminary_pages/approval.tex}
+\subfile{preliminary_pages/abstract}
 
-\includepdf{preliminary_pages/statement.pdf}
-
-\includepdf{preliminary_pages/abstract.pdf}
-
-\tableofcontents
-\listoffigures
-\listoftables
-
-\chapter{Introduction}
+\section{Introduction}
 \subfile{chapters/chapter-1}
 
-\chapter{Theoretical Foundation}
+\section{Theoretical Foundation}
 \subfile{chapters/chapter-2}
 
-\chapter{Analysis on Security Knowledge Framework}
+\section{Analysis on Security Knowledge Framework}
 \subfile{chapters/chapter-3}
 
-\chapter{Solution Design}
+\section{Solution Design}
 \subfile{chapters/chapter-4}
 
-\chapter{Solution Implementation}
+\section{Solution Implementation}
 \subfile{chapters/chapter-5}
 
-\chapter{Discussion}
+\section{Discussion}
 \subfile{chapters/chapter-6}
 
-\chapter{Conclusion and Recommendation}
+\section{Conclusion and Recommendation}
 \subfile{chapters/chapter-7}
 
-\printbibliography[title={\MakeUppercase{\large References}}]
+\printbibliography
 
 \end{document}
